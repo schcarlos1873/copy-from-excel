@@ -1,0 +1,60 @@
+<div>
+  <div>
+    <label for="jumbo">Jumbo: </label>
+    <span>{{jumbo}}</span>
+  </div>
+  
+  <div>
+    <label for="gramatura">Gramatura: </label>
+    <span>{{gramatura}}</span>
+  </div>
+  
+  <div>
+    <label for="umidade">Umidade: </label>
+    <span>{{umidade}}</span>
+  </div>
+  
+  <div>
+    <label for="alvura">Alvura: </label>
+    <span>{{alvura}}</span>
+  </div>
+  
+  <div>
+    <label for="espessura">Espessura: </label>
+    <span>{{espessura}}</span>
+  </div>
+  
+  <div>
+    <label for="opacidade">Opacidade: </label>
+    <span>{{opacidade}}</span>
+  </div>
+</
+div>
+
+<table class="sheet-edit">
+ <thead>
+    <tr>
+      <th>#</th>
+      <th *ngFor="let column of columns"> {{column}}</th>
+    </tr>
+ </thead>
+
+ <tbody>
+   <tr *ngFor="let d of data; let row = index">
+     <td>{{row+1}}</td>
+      <td *ngFor="let column of columns;let col = index"
+        [ngClass]="{'highlight': selectedRowIndex == row}"
+        [id]="getId(row, col)"
+        appKeyArrow
+        [rowIndex]="row"
+        [dataSource]="d"
+      >
+        <input type="text" [value]="d[column]">
+      </td> 
+   </tr>
+ </tbody>
+</table>
+
+<!-- (click)="highlight(row)"
+(keydown.arrowdown)="arrowDownEvent(row)"
+(keydown.arrowup)="arrowUpEvent(row)" -->
