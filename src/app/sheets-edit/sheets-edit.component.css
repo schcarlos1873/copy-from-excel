@@ -1,0 +1,54 @@
+.sheet-edit {
+    margin-top: 10px;
+    border-spacing: 1px;
+    border-collapse: collapse;
+    border: 1px solid #afafaf;
+}
+
+.sheet-edit td {
+    border: 1px solid #afafaf;
+}
+
+.sheet-edit th,
+.sheet-edit td:first-child
+{
+    background-color: #1e90ff;
+    color: #fff;
+    border-color: #dcdcdc;
+   
+}
+.sheet-edit td:first-child {
+    width: 40px;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+}
+
+.sheet-edit td > input{
+    width: 120px;
+    text-align: center;
+    margin: 0;
+    border-width: 0px;
+}
+
+.highlight, 
+.highlight input{
+    background: #00aeffbe;
+  }
+ 
+  .highlight input:focus {
+      background-color: #fff;
+  }
+
+.sheet-edit tr:focus{
+    outline: none;
+}
+
+div{
+    display:inline-block;
+    margin:.5rem;
+  }
+  div:focus{
+    border:1px solid black;
+    outline: none
+  }

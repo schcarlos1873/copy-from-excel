@@ -1,0 +1,25 @@
+<hello name="{{ name }}"></hello>
+<p>
+  Start editing to see some magic happen :)
+</p>
+<p>
+  Step:
+</p>
+  <ul>
+    Copy data from excel which you want to create a table and paste it at paste area.
+  </ul>
+<div style="border:solid;height:100px"
+  (paste)="data($event)">
+  paste area
+</div>
+<div>{{val}}</div>
+ <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <ng-container *ngFor="let column of displayedColumns" [matColumnDef]="column">
+    <th mat-header-cell *matHeaderCellDef> {{column}} </th>
+    <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table> 
+
+<app-sheets-edit></app-sheets-edit>
